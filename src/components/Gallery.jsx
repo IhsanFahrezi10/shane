@@ -6,12 +6,12 @@ import AnimatedText from "./ui/AnimatedText";
 
 const photos = [
   { src: "/gallery/grad.png", label: "Graduation", span: "col-span-2 md:col-span-2 row-span-2" },
-  { src: "/gallery/vokasi.png", label: "Vokasi", span: "col-span-1 md:col-span-1 row-span-2" },
-  { src: "/gallery/vokasi-crew.png", label: "Vokasi Crew", span: "col-span-1 md:col-span-1 row-span-2" },
-  { src: "/gallery/sidang.png", label: "Sidang", span: "col-span-1 md:col-span-1 row-span-2" },
-  { src: "/gallery/tea-garden.png", label: "Tea Garden", span: "col-span-1 md:col-span-1 row-span-2" },
-  { src: "/gallery/hangout.png", label: "Hangout", span: "col-span-1 md:col-span-1 row-span-2" },
-  { src: "/gallery/night.png", label: "Night Out", span: "col-span-1 md:col-span-1 row-span-2" },
+  { src: "/gallery/sesi-2.png", label: "Sesi II", span: "col-span-1 md:col-span-1 row-span-2" },
+  { src: "/gallery/sesi-1.png", label: "Sesi I", span: "col-span-1 md:col-span-1 row-span-2" },
+  { src: "/gallery/sidankk.png", label: "Sidankk", span: "col-span-1 md:col-span-1 row-span-2" },
+  { src: "/gallery/trip.png", label: "Small Trip", span: "col-span-1 md:col-span-1 row-span-2" },
+  { src: "/gallery/photoshoot.png", label: "Photoshoot", span: "col-span-1 md:col-span-1 row-span-2" },
+  { src: "/gallery/bukber.png", label: "Bukeberr", span: "col-span-1 md:col-span-1 row-span-2" },
 ];
 
 export default function Gallery() {
