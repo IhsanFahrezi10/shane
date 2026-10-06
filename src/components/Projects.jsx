@@ -35,6 +35,7 @@ export default function Projects() {
                     borderColor: "#FACC15",
                     boxShadow: "0 20px 50px -15px rgba(250,204,21,0.4), inset 0 1px 0 rgba(255,255,255,0.9)",
                   }}
+                  whileTap={{ scale: 0.98 }}
                   transition={{ type: "spring", stiffness: 300, damping: 22 }}
                 >
                   {/* Thumbnail */}

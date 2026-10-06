@@ -15,7 +15,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 px-6 relative">
+    <section id="contact" className="py-16 md:py-20 px-4 md:px-6">
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <h2 className="font-display text-5xl md:text-7xl mb-6">
           <AnimatedText text="Let's" />{" "}

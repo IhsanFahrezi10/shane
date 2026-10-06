@@ -37,6 +37,7 @@ export default function Certificates() {
                     borderColor: "#FACC15",
                     boxShadow: "0 20px 40px -15px rgba(250,204,21,0.45), inset 0 1px 0 rgba(255,255,255,0.9)",
                   }}
+                  whileTap={{ scale: 0.98 }}
                   transition={{ type: "spring", stiffness: 300, damping: 22 }}
                 >
                   <img src={cert.image} alt={cert.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" onError={(e) => (e.currentTarget.style.display = "none")} />

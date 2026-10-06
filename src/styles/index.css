@@ -297,3 +297,66 @@ body::-webkit-scrollbar {
 .dark .skill-item:hover {
   color: #0a0a0a; /* Dark mode: item hitam → tetap hitam (atau ganti sesuai selera) */
 }
+/* ===== Touch & Mobile Optimization ===== */
+
+/* Hover effect cuma aktif di device yang support hover (desktop) */
+@media (hover: none) {
+  /* Semua hover effect jadi tap effect */
+  *:active {
+    transition: transform 0.1s, opacity 0.1s;
+  }
+
+  .glass:active,
+  .liquid-glass:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Cegah text terlalu kecil di mobile */
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Tap highlight — bikin warna highlight tap jadi kuning accent */
+* {
+  -webkit-tap-highlight-color: rgba(250, 204, 21, 0.2);
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Gambar gak bisa di-drag di mobile */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Tombol & link tetap bisa diklik */
+a img,
+button img {
+  pointer-events: auto;
+}
+
+/* Teks outline — lebih kontras di mobile */
+.text-outline {
+  -webkit-text-stroke: 1.5px #0a0a0a;
+}
+.dark .text-outline {
+  -webkit-text-stroke: 1.5px #fafafa;
+}
+
+/* Skill item — tap aktif di mobile */
+.skill-item:active {
+  color: #FACC15;
+  transform: translateX(4px);
+}
+.dark .skill-item:active {
+  color: #0a0a0a;
+  transform: translateX(4px);
+}

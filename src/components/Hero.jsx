@@ -6,18 +6,17 @@ import Marquee from "./ui/Marquee";
 
 export default function Hero() {
   return (
-    <section className="pt-32 pb-0 px-6 relative overflow-visible">
+    <section className="pt-24 md:pt-32 pb-0 px-4 md:px-6 relative overflow-visible">
       <div className="max-w-6xl mx-auto text-center">
-        {/* HEADLINE STACK: my + portofolio + foto */}
+        {/* HEADLINE STACK */}
         <div className="relative flex justify-center items-center pt-2 md:pt-3 lg:pt-4">
-          {/* "my" — atas-kiri, font serif italic */}
+          {/* "my" — atas-kiri */}
           <motion.span
-            className="absolute top-28 md:top-30 lg:top-32 left-2 md:left-8 lg:left-16 text-5xl md:text-7xl lg:text-8xl text-accent select-none z-30"
+            className="absolute top-16 md:top-28 lg:top-32 left-1 md:left-8 lg:left-16 text-3xl md:text-7xl lg:text-8xl text-accent select-none z-30"
             style={{
               fontFamily: "var(--font-serif)",
               fontStyle: "italic",
               fontWeight: 400,
-              letterSpacing: "-0.02em",
               lineHeight: 1,
             }}
             initial={{ opacity: 0, x: -30, y: 10 }}
@@ -27,11 +26,21 @@ export default function Hero() {
             my
           </motion.span>
 
-          {/* Wrapper tengah: portofolio solid + foto + portofolio stroke */}
-          <div className="relative grid place-items-center">
-            {/* LAYER 1 — PORTOFOLIO solid */}
+          {/* Tagline — kanan bawah */}
+          <motion.span
+            className="absolute bottom-1 md:bottom-4 lg:bottom-6 right-1 md:right-8 lg:right-16 text-[8px] md:text-sm lg:text-base uppercase tracking-[0.2em] md:tracking-[0.25em] font-medium text-accent select-none z-30 max-w-[8rem] md:max-w-[16rem] text-right leading-relaxed"
+            initial={{ opacity: 0, x: 30, y: -10 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ delay: 2.9, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {profile.tagline}
+          </motion.span>
+
+          {/* Wrapper Portofolio + Foto */}
+          <div className="relative grid place-items-center w-full">
+            {/* LAYER 1 — Solid */}
             <motion.span
-              className="col-start-1 row-start-1 z-0 font-headline text-[16vw] md:text-[10rem] lg:text-[13rem] uppercase text-black dark:text-white select-none whitespace-nowrap"
+              className="col-start-1 row-start-1 z-0 font-headline text-[14vw] md:text-[10rem] lg:text-[13rem] uppercase text-black dark:text-white select-none whitespace-nowrap"
               style={{
                 fontWeight: 700,
                 letterSpacing: "-0.04em",
@@ -45,9 +54,9 @@ export default function Hero() {
               Portofolio
             </motion.span>
 
-            {/* LAYER 2 — FOTO */}
+            {/* LAYER 2 — Foto */}
             <motion.div
-              className="col-start-1 row-start-1 z-20 relative w-[130vw] h-[85vh] md:w-[50rem] md:h-[95vh] lg:w-[66rem] lg:h-[105vh] flex items-end justify-center -translate-y-8 md:-translate-y-12 lg:-translate-y-16 pointer-events-none"
+              className="col-start-1 row-start-1 z-20 relative w-[95vw] h-[55vh] md:w-[50rem] md:h-[95vh] lg:w-[66rem] lg:h-[105vh] flex items-end justify-center -translate-y-4 md:-translate-y-12 lg:-translate-y-16 pointer-events-none"
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             >
@@ -60,12 +69,6 @@ export default function Hero() {
                   ease: "easeInOut",
                 }}
               >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-xs text-neutral-500 text-center px-2">
-                    [ Foto cutout lo ]<br />
-                    <code className="text-[10px]">public/profile.png</code>
-                  </span>
-                </div>
                 <img
                   src="/profile.png"
                   alt={profile.name}
@@ -79,9 +82,9 @@ export default function Hero() {
               </motion.div>
             </motion.div>
 
-            {/* LAYER 3 — PORTOFOLIO stroke (depan foto) */}
+            {/* LAYER 3 — Stroke */}
             <motion.span
-              className="col-start-1 row-start-1 z-30 font-headline text-[16vw] md:text-[10rem] lg:text-[13rem] uppercase select-none whitespace-nowrap pointer-events-none"
+              className="col-start-1 row-start-1 z-30 font-headline text-[14vw] md:text-[10rem] lg:text-[13rem] uppercase select-none whitespace-nowrap pointer-events-none"
               style={{
                 color: "transparent",
                 WebkitTextStroke: "1.5px #facc15",
@@ -96,31 +99,30 @@ export default function Hero() {
               Portofolio
             </motion.span>
           </div>
-          <motion.span
-            className="absolute bottom-2 md:bottom-4 lg:bottom-6 right-2 md:right-8 lg:right-16 text-sm md:text-lg lg:text-2xl uppercase tracking-[0.25em] font-medium text-accent select-none z-30 max-w-[14rem] md:max-w-[20rem] lg:max-w-[28rem] text-right leading-relaxed"
-            animate={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ delay: 2.9, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {profile.tagline}
-          </motion.span>
         </div>
 
         {/* CTA */}
-        <motion.div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.7, duration: 0.6 }}>
+        <motion.div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.7, duration: 0.6 }}>
           <Magnetic strength={0.4}>
-            <a href="#contact" className="inline-flex items-center justify-center gap-2 bg-black text-white dark:bg-accent dark:text-black px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center gap-2 bg-black text-white dark:bg-accent dark:text-black px-5 md:px-6 py-3 rounded-lg font-semibold hover:opacity-90 active:scale-95 transition text-sm md:text-base"
+            >
               You need a developer <FiArrowUpRight />
             </a>
           </Magnetic>
           <Magnetic strength={0.4}>
-            <a href="#experience" className="inline-flex items-center justify-center gap-2 border border-black/20 dark:border-white/20 px-6 py-3 rounded-lg font-semibold hover:bg-accent hover:text-black hover:border-accent transition">
+            <a
+              href="#experience"
+              className="inline-flex items-center justify-center gap-2 border border-black/20 dark:border-white/20 px-5 md:px-6 py-3 rounded-lg font-semibold hover:bg-accent hover:text-black hover:border-accent active:scale-95 transition text-sm md:text-base"
+            >
               Build something with me
             </a>
           </Magnetic>
         </motion.div>
       </div>
 
-      <motion.div className="mt-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.1, duration: 0.8 }}>
+      <motion.div className="mt-12 md:mt-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.1, duration: 0.8 }}>
         <Marquee items={profile.techStack} speed={28} />
       </motion.div>
     </section>

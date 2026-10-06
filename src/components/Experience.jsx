@@ -26,7 +26,7 @@ function ExperienceCard({ item, side = "left", index }) {
   return (
     <>
       <div ref={ref} className="relative">
-        <div className={`flex flex-col md:flex-row md:items-center gap-6 ${side === "right" ? "md:flex-row-reverse" : ""}`}>
+        <div className={`flex flex-col md:flex-row md:items-center gap-5 md:gap-6 ${side === "right" ? "md:flex-row-reverse" : ""}`}>
           {/* Foto swipe */}
           <motion.div style={{ x, rotate, opacity }} className="relative w-full md:w-1/2 shrink-0">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden ring-2 ring-accent/40 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)]">
@@ -45,7 +45,7 @@ function ExperienceCard({ item, side = "left", index }) {
           </motion.div>
 
           {/* Teks */}
-          <Reveal delay={index * 0.05} className="w-full md:w-1/2 md:px-8">
+          <Reveal delay={index * 0.05} className="w-full md:w-1/2 px-1 md:px-8">
             <h4 className="font-display text-xl md:text-2xl lg:text-3xl mb-3 leading-tight">{item.title}</h4>
             <p className="text-sm md:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed mb-5">{item.desc}</p>
             {item.certImage && (
@@ -72,7 +72,7 @@ export default function Experience() {
   let globalIndex = 0;
 
   return (
-    <section id="experience" className="py-20 px-6">
+    <section id="experience" className="py-16 md:py-20 px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="liquid-glass p-8 md:p-12 lg:p-16">
           <span className="refraction-layer" aria-hidden />
