@@ -13,7 +13,7 @@ export const profile = {
       items: [
         {
           title: "Information Technology Intern — PT Alliance Consumer Product",
-          year: "2025",
+          year: "2026",
           desc: "Internship as Information Technology Intern at PT Alliance Consumer Product.",
           certImage: "/experiences/alliance.png",
           certFile: "/certificates/alliance-cert.png", // ← foto sertif asli
@@ -27,7 +27,7 @@ export const profile = {
         },
         {
           title: "Field Work Practice — PT Telekomunikasi Indonesia",
-          year: "2023",
+          year: "2025",
           desc: "Field Work Practice (PKL) in the Government Service division.",
           certImage: "/experiences/telkom.png",
           certFile: "/certificates/telkom-cert.png",
@@ -41,7 +41,7 @@ export const profile = {
           title: "Head of Secretarial Division — HIMTI",
           year: "2025/2026",
           desc: "Informatics Engineering Student Association. Led the secretarial division of the organization.",
-          certImage: "/experiences/himti-kabid.png",
+          certImage: "/experiences/ketua-sekret.png",
           certFile: "/certificates/himti-kabid-cert.png",
         },
         {
