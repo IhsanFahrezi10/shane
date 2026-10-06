@@ -24,7 +24,7 @@ export default function Contact() {
           </span>
         </h2>
         <Reveal delay={0.2}>
-          <p className="text-neutral-600 dark:text-neutral-400 mb-10">"Feel free to reach out to me if you have any questions</p>
+          <p className="text-neutral-600 dark:text-neutral-400 mb-10">Feel free to reach out to me if you have any questions</p>
         </Reveal>
 
         <div className="flex flex-wrap justify-center gap-4">
