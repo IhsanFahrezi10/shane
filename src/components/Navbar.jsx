@@ -25,7 +25,7 @@ export default function Navbar() {
         className="fixed top-3 md:top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] md:w-[calc(100%-2rem)] max-w-6xl"
       >
         <div className="glass-strong rounded-2xl flex items-center justify-between px-4 md:px-6 py-3">
-          <motion.a href="#" className="font-display text-lg md:text-2xl tracking-tight" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.a href="#" className="font-display text-sm md:text-2xl tracking-tight"   whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             {profile.brand}
             <span className="text-accent">.</span>
           </motion.a>

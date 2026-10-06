@@ -15,8 +15,8 @@ function ExperienceCard({ item, side = "left", index }) {
   });
 
   // Swipe horizontal: foto bergeser dari kiri ke kanan seiring scroll
-  const x = useTransform(scrollYProgress, [0, 1], side === "left" ? [-80, 80] : [80, -80]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [-4, 4]);
+  const x = useTransform(scrollYProgress, [0, 1], side === "left" ? [-30, 30] : [30, -30]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [-2, 2]);
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0.6]);
 
   const [modal, setModal] = useState({ open: false, image: "", title: "" });
@@ -25,10 +25,10 @@ function ExperienceCard({ item, side = "left", index }) {
 
   return (
     <>
-      <div ref={ref} className="relative">
+      <div ref={ref} className="relative overflow-hidden">
         <div className={`flex flex-col md:flex-row md:items-center gap-5 md:gap-6 ${side === "right" ? "md:flex-row-reverse" : ""}`}>
           {/* Foto swipe */}
-          <motion.div style={{ x, rotate, opacity }} className="relative w-full md:w-1/2 shrink-0">
+          <motion.div style={{ x, rotate, opacity }} className="relative w-full md:w-1/2 shrink-0 overflow-hidden">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden ring-2 ring-accent/40 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)]">
               {item.certImage ? (
                 <img src={item.certImage} alt={item.title} className="w-full h-full object-cover" onError={(e) => (e.currentTarget.style.display = "none")} />
