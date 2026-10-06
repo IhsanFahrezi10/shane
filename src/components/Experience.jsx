@@ -50,7 +50,7 @@ function ExperienceCard({ item, side = "left", index }) {
             <p className="text-sm md:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed mb-5">{item.desc}</p>
             {item.certImage && (
               <motion.button
-                onClick={() => openCert(item.certImage, item.title)}
+                onClick={() => openCert(item.certFile || item.certImage, item.title)}
                 className="glass inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg hover:bg-accent hover:text-black transition"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
