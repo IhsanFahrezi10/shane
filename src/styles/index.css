@@ -1,0 +1,299 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================================
+   1. THEME TOKENS
+   ============================================ */
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+  --font-headline: "Space Grotesk", sans-serif;
+  --color-accent: #facc15;
+  --color-accent-dark: #eab308;
+}
+
+/* ============================================
+   2. BASE / RESET
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background: #f0f0f0;
+  color: #0a0a0a;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.dark body {
+  background: #0a0a0a;
+  color: #fafafa;
+}
+
+/* ============================================
+   3. SCROLLBAR — hidden
+   ============================================ */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* ============================================
+   4. CURSOR
+   ============================================ */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* ============================================
+   5. TYPOGRAPHY
+   ============================================ */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px #0a0a0a;
+}
+
+.dark .text-outline {
+  -webkit-text-stroke: 2px #fafafa;
+}
+
+@media (min-width: 768px) {
+  .text-outline {
+    -webkit-text-stroke-width: 3px;
+  }
+}
+
+/* ============================================
+   6. BACKGROUND — grid & glow
+   ============================================ */
+.grid-pattern {
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1.5px);
+  background-size: 36px 36px;
+  color: rgba(10, 10, 10, 0.35);
+}
+
+.dark .grid-pattern {
+  color: rgba(250, 250, 250, 0.22);
+}
+
+.grid-glow {
+  background: radial-gradient(480px circle at var(--mx, 50%) var(--my, 50%), rgba(250, 204, 21, 0.22), rgba(250, 204, 21, 0.05) 35%, transparent 60%);
+}
+
+.grid-fade {
+  background: linear-gradient(to bottom, transparent 0%, transparent 70%, #f0f0f0 100%);
+}
+
+.dark .grid-fade {
+  background: linear-gradient(to bottom, transparent 0%, transparent 70%, #0a0a0a 100%);
+}
+
+/* ============================================
+   7. GLASSMORPHISM
+   ============================================ */
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 8px 32px rgba(10, 10, 10, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.dark .glass {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 12px 40px rgba(10, 10, 10, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.dark .glass-strong {
+  background: rgba(20, 20, 20, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-accent {
+  background: rgba(250, 204, 21, 0.14);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(250, 204, 21, 0.35);
+  box-shadow:
+    0 8px 32px rgba(250, 204, 21, 0.15),
+    inset 0 1px 0 rgba(250, 204, 21, 0.25);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass,
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.95);
+  }
+  .dark .glass,
+  .dark .glass-strong {
+    background: rgba(20, 20, 20, 0.95);
+  }
+}
+
+/* ============================================
+   8. ACCESSIBILITY
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* ===== Apple Liquid Glass ===== */
+.liquid-glass {
+  position: relative;
+  isolation: isolate;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(28px) saturate(200%) brightness(1.05);
+  -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.05);
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow:
+    /* Depth shadow */
+    0 24px 60px -20px rgba(0, 0, 0, 0.18),
+    0 8px 24px -8px rgba(0, 0, 0, 0.08),
+    /* Inner top highlight (specular) */ inset 0 1px 1px rgba(255, 255, 255, 1),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.4),
+    /* Inner side highlights */ inset 1px 0 1px rgba(255, 255, 255, 0.6),
+    inset -1px 0 1px rgba(255, 255, 255, 0.6),
+    /* Chromatic aberration (subtle) */ inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.dark .liquid-glass {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow:
+    0 24px 60px -20px rgba(0, 0, 0, 0.6),
+    0 8px 24px -8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 0 1px rgba(255, 255, 255, 0.08),
+    inset -1px 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* Border dengan chromatic aberration (merah/biru tipis di tepi) */
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 200, 200, 0.6) 0%, rgba(255, 255, 255, 0.9) 30%, rgba(200, 220, 255, 0.6) 60%, rgba(255, 255, 255, 0.9) 100%);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.dark .liquid-glass::before {
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.3) 0%, rgba(255, 255, 255, 0.15) 40%, rgba(140, 180, 255, 0.2) 70%, rgba(255, 255, 255, 0.1) 100%);
+  opacity: 0.5;
+}
+
+/* Specular highlight bergerak (efek cahaya melintas) */
+.liquid-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(115deg, transparent 25%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0.55) 50%, rgba(255, 255, 255, 0.35) 55%, transparent 75%);
+  background-size: 300% 300%;
+  animation: liquidSheen 10s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.6;
+  z-index: 2;
+}
+
+.dark .liquid-glass::after {
+  background: linear-gradient(115deg, transparent 25%, rgba(250, 204, 21, 0.08) 45%, rgba(255, 255, 255, 0.12) 50%, rgba(250, 204, 21, 0.08) 55%, transparent 75%);
+  background-size: 300% 300%;
+  opacity: 0.5;
+}
+
+@keyframes liquidSheen {
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Refraction layer — pakai SVG filter (efek cahaya bengkok di tepi) */
+.liquid-glass > .refraction-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  filter: url(#liquid-glass-filter);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 3;
+  mix-blend-mode: overlay;
+}
+
+.dark .liquid-glass > .refraction-layer {
+  opacity: 0.25;
+}
+/* Skill item hover — adaptif light/dark */
+.skill-item {
+  transition: color 0.3s ease;
+}
+.skill-item:hover {
+  color: #facc15; /* Light mode: item putih → kuning */
+}
+.dark .skill-item:hover {
+  color: #0a0a0a; /* Dark mode: item hitam → tetap hitam (atau ganti sesuai selera) */
+}
