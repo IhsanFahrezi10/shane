@@ -4,7 +4,7 @@ import Reveal from "./ui/Reveal";
 import AnimatedText from "./ui/AnimatedText";
 
 const photos = [
-  { src: "/gallery/grad.png", label: "Graduation", span: "col-span-2 md:col-span-2 row-span-2" },
+  { src: "/gallery/grad.png", label: "Grad", span: "col-span-2 md:col-span-2 row-span-2" },
   { src: "/gallery/sesi-1.png", label: "Sesi I", span: "col-span-1 md:col-span-1 row-span-2" },
   { src: "/gallery/sesi-2.png", label: "Sesi II", span: "col-span-1 md:col-span-1 row-span-2" },
   { src: "/gallery/sidankk.png", label: "Sidankk", span: "col-span-1 md:col-span-1 row-span-2" },
@@ -59,7 +59,7 @@ export default function Gallery() {
           <Reveal>
             <span className="w-3 h-3 rounded-full bg-accent inline-block" />
           </Reveal>
-          <AnimatedText text="With My Friends" />
+          <AnimatedText text="Me n THE Boiss" />
         </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[120px] md:auto-rows-[160px] gap-2 md:gap-4">
