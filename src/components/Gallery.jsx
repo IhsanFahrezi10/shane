@@ -8,7 +8,7 @@ const photos = [
   { src: "/gallery/sesi-1.png", label: "Sesi I", span: "col-span-1 md:col-span-1 row-span-2" },
   { src: "/gallery/sesi-2.png", label: "Sesi II", span: "col-span-1 md:col-span-1 row-span-2" },
   { src: "/gallery/sidankk.png", label: "Sidankk", span: "col-span-1 md:col-span-1 row-span-2" },
-  { src: "/gallery/sidamanik.png", label: "Smoll Trip", span: "col-span-1 md:col-span-1 row-span-2" },
+  { src: "/gallery/trip.png", label: "Smoll Trip", span: "col-span-1 md:col-span-1 row-span-2" },
   { src: "/gallery/photoshoot.png", label: "Photoshoot", span: "col-span-1 md:col-span-1 row-span-2" },
   { src: "/gallery/bukber.png", label: "Bukeberr", span: "col-span-1 md:col-span-1 row-span-2" },
 ];
