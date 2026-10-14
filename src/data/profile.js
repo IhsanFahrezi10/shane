@@ -72,6 +72,14 @@ export const profile = {
       image: "/projects/order-mahasyik.png",
       link: "https://mahaasyik-resto-one.vercel.app/",
     },
+    {
+      title: "Alliance Daily Report",
+      desc: "Portal update laporan magang harian untuk internal PT Alliance Consumer Product. Fitur meliputi input laporan harian, tracking progress, dan rekap otomatis untuk supervisor.",
+      year: "2026",
+      tech: ["TypeScript", "PostgreSQL", "Tailwind CSS"],
+      image: "/projects/alliance-daily-report.png",
+      link: "https://alliance-daily-report.vercel.app/",
+    },
   ],
 
   certificates: [

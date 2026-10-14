@@ -25,7 +25,7 @@ export default function Projects() {
             <AnimatedText text="Projects" />
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {profile.projects.map((project, i) => (
               <Reveal key={project.title} delay={i * 0.08}>
                 <motion.div
