@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import SmoothScroll from "./components/SmoothScroll";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -20,43 +21,52 @@ import { profile } from "./data/profile";
 export default function App() {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 1800);
-    return () => clearTimeout(t);
-  }, []);
-
   return (
-    <div className="min-h-screen relative">
-      <Loader show={loading} brand={profile.brand} />
-      <Cursor />
-      <ScrollProgress />
+    <SmoothScroll>
+      <div className="min-h-screen relative pb-24 md:pb-0">
+        {/* Preloader dengan animated GSAP counter */}
+        <Loader
+          show={loading}
+          brand={profile.brand}
+          onFinish={() => setLoading(false)}
+        />
 
-      {/* Layer 1: Grid + glow cursor */}
-      <GridBackground />
+        {/* Adaptive Cursor */}
+        <Cursor />
 
-      {/* Layer 2: Blob kuning */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <FloatingBlob className="top-[10%] -left-20" delay={0} size={500} />
-        <FloatingBlob className="top-[50%] -right-32" delay={2} size={600} />
-        <FloatingBlob className="bottom-[5%] left-[30%]" delay={4} size={400} />
+        {/* Reading Progress */}
+        <ScrollProgress />
+
+        {/* Layer 1: Interactive Grid */}
+        <GridBackground />
+
+        {/* Layer 2: Ambient Yellow Blobs */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+          <FloatingBlob className="top-[10%] -left-20" delay={0} size={500} />
+          <FloatingBlob className="top-[50%] -right-32" delay={2} size={600} />
+          <FloatingBlob className="bottom-[5%] left-[30%]" delay={4} size={400} />
+        </div>
+
+        {/* Layer 3: Ambient Tech Floating Icons */}
+        <FloatingIcons />
+
+        {/* Navigasi: Desktop Floating Top + Mobile Liquid Glass Bottom Dock */}
+        <Navbar />
+
+        {/* Konten Utama */}
+        <main className="relative z-10">
+          <Hero />
+          <About />
+          <Experience />
+          <Skills />
+          <Projects />
+          <Certificates />
+          <Gallery />
+          <Contact />
+        </main>
+
+        <Footer />
       </div>
-
-      {/* Layer 3: Ikon samar */}
-      <FloatingIcons />
-
-      {/* Konten */}
-      <Navbar />
-      <main className="relative z-10">
-        <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Certificates />
-        <Gallery />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    </SmoothScroll>
   );
 }
