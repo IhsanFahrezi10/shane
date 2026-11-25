@@ -4,8 +4,19 @@ export const profile = {
   tagline: "Righty Tighty, Lefty Loosey",
   location: "Medan, North Sumatera",
   bio: "Fresh graduate Teknik Informatika USU yang fokus di web development dan database management.",
-  skills: ["Web Developing", "Database Management"],
-  techStack: ["React", "PHP", "Vue", "Tailwind CSS", "Git", "MySQL"],
+  skills: ["Web Developing", "Database Management", "IT Support & Helpdesk"],
+  techStack: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Vue",
+    "Laravel",
+    "PHP",
+    "Tailwind CSS",
+    "PostgreSQL",
+    "MySQL",
+    "Git",
+  ],
 
   experiences: [
     {
