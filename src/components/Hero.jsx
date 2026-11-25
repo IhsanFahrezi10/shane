@@ -188,14 +188,14 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* VELOCITY KINETIC MARQUEE */}
+      {/* VELOCITY KINETIC MARQUEE (SLOWMO) */}
       <motion.div
         className="mt-12 md:mt-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.8 }}
       >
-        <Marquee items={profile.techStack} speed={24} />
+        <Marquee items={profile.techStack} speed={0.45} />
       </motion.div>
     </section>
   );
